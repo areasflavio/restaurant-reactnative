@@ -14,6 +14,7 @@ export const Header = styled.View`
 `;
 
 export const HeaderText = styled.Text`
+  font-family: 'Poppins-Medium';
   font-size: 32px;
   color: #fff;
 `;
@@ -23,7 +24,8 @@ export const MainContent = styled.View`
 `;
 
 export const MainContentText = styled.Text`
-  font-size: 48px;
+  font-family: 'Poppins-Bold';
+  font-size: 40px;
   color: #fff;
 `;
 
@@ -37,5 +39,6 @@ export const EnterButton = styled.TouchableOpacity`
 `;
 
 export const EnterButtonText = styled.Text`
-  font-size: 24px;
+  font-family: 'Poppins-Bold';
+  font-size: 16px;
 `;

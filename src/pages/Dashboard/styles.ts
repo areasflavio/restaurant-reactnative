@@ -10,6 +10,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
+  font-family: 'Poppins-Medium';
   font-size: 32px;
   color: #fff;
 `;
