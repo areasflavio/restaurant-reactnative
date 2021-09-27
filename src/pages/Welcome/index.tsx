@@ -1,14 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useCallback } from 'react';
 
+import Button from '../../components/Button';
+
 import {
   Container,
   Header,
   HeaderText,
   MainContent,
   MainContentText,
-  EnterButton,
-  EnterButtonText,
 } from './styles';
 
 const Welcome: React.FC = () => {
@@ -30,9 +30,9 @@ const Welcome: React.FC = () => {
         </MainContentText>
       </MainContent>
 
-      <EnterButton onPress={handleEnterApp}>
-        <EnterButtonText>Entrar no Restaurant</EnterButtonText>
-      </EnterButton>
+      <Button onPress={handleEnterApp} icon="log-in" type="regular">
+        Entrar no Restaurant
+      </Button>
     </Container>
   );
 };
