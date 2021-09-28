@@ -15,7 +15,7 @@ const Welcome: React.FC = () => {
   const { navigate } = useNavigation();
 
   const handleEnterApp = useCallback(() => {
-    navigate('Dashboard');
+    navigate('Main');
   }, [navigate]);
 
   return (
