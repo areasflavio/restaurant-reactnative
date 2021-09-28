@@ -10,21 +10,14 @@ const Stack = createNativeStackNavigator();
 
 const AppRoutes: React.FC = () => (
   <NavigationContainer>
-    <Stack.Navigator>
-      <Stack.Screen
-        name="Welcome"
-        component={Welcome}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
-        name="Main"
-        component={TabRoutes}
-        options={{
-          headerShown: false,
-        }}
-      />
+    <Stack.Navigator
+      initialRouteName="Welcome"
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Welcome" component={Welcome} />
+      <Stack.Screen name="Main" component={TabRoutes} />
     </Stack.Navigator>
   </NavigationContainer>
 );
