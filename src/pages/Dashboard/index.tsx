@@ -1,10 +1,13 @@
 import React from 'react';
+import Input from '../../components/Input';
 
-import { Container, Title } from './styles';
+import { Container, Header } from './styles';
 
 const Dashboard: React.FC = () => (
   <Container>
-    <Title>Dashboard</Title>
+    <Header>
+      <Input icon="search" placeholder="What food are you looking for?" />
+    </Header>
   </Container>
 );
 
