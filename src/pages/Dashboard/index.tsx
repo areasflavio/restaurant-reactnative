@@ -17,6 +17,7 @@ import {
   FoodsListContainer,
   FoodsList,
   FoodContainer,
+  FoodImageContainer,
   FoodImage,
   FoodInfo,
   FoodName,
@@ -102,15 +103,14 @@ const Dashboard: React.FC = () => {
         <Title>Foods</Title>
         <FoodsListContainer>
           <FoodsList
-            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
             data={foods}
             keyExtractor={food => String(food.id)}
             renderItem={({ item: food }) => (
-              <FoodContainer
-                selected={food.id === selectedCategory}
-                onPress={() => handleSelectCategory(food.id)}
-              >
-                <FoodImage source={{ uri: food.thumbnail_url }} />
+              <FoodContainer onPress={() => handleSelectCategory(food.id)}>
+                <FoodImageContainer>
+                  <FoodImage source={{ uri: food.thumbnail_url }} />
+                </FoodImageContainer>
 
                 <FoodInfo>
                   <FoodName>{food.name}</FoodName>

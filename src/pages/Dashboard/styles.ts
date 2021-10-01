@@ -50,14 +50,30 @@ export const CategoriesList = styled(
   FlatList as new () => FlatList<Category>
 )``;
 
-export const CategoryContainer = styled(RectButton)<CategoryContainerProps>``;
+export const CategoryContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6,
+})<CategoryContainerProps>`
+  align-items: center;
+
+  padding: 8px 16px;
+  margin-right: 16px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  border-color: ${props => (props.selected ? '#1e90ff' : '#bbb')};
+
+  background: #bbb;
+`;
 
 export const CategoryImage = styled.Image`
   height: 64px;
   width: 64px;
 `;
 
-export const CategoryTitle = styled.Text<CategoryTitleProps>``;
+export const CategoryTitle = styled.Text<CategoryTitleProps>`
+  margin-top: auto;
+
+  color: ${props => (props.selected ? '#1e90ff' : '#444')};
+`;
 
 export const FoodsListContainer = styled.View`
   flex: 1;
@@ -65,8 +81,19 @@ export const FoodsListContainer = styled.View`
 
 export const FoodsList = styled(FlatList as new () => FlatList<Food>)``;
 
-export const FoodContainer = styled(RectButton)<CategoryContainerProps>`
+export const FoodContainer = styled(RectButton)`
   flex-direction: row;
+
+  margin-bottom: 16px;
+  border-radius: 4px;
+`;
+
+export const FoodImageContainer = styled.View`
+  padding: 8px;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+
+  background: #1e90ff;
 `;
 
 export const FoodImage = styled.Image`
@@ -74,7 +101,13 @@ export const FoodImage = styled.Image`
   width: 64px;
 `;
 
-export const FoodInfo = styled.View``;
+export const FoodInfo = styled.View`
+  padding: 8px;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+
+  background: #bbb;
+`;
 
 export const FoodName = styled.Text``;
 
