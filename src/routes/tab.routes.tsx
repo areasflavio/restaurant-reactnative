@@ -1,10 +1,96 @@
 import React from 'react';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
 
 import Dashboard from '../pages/Dashboard';
+import FoodDetails from '../pages/FoodDetails';
 import Orders from '../pages/Orders';
 import Favorites from '../pages/Favorites';
+
+const Main = createNativeStackNavigator();
+
+const MainStack: React.FC = () => {
+  return (
+    <Main.Navigator initialRouteName="Dashboard">
+      <Main.Screen
+        name="Dashboard"
+        component={Dashboard}
+        options={({ navigation }) => ({
+          headerLeft: () => <></>,
+          headerRight: () => (
+            <Icon
+              name="log-out"
+              size={24}
+              color="#fcc735"
+              onPress={() => {
+                navigation.navigate('Welcome');
+              }}
+            />
+          ),
+          headerRightContainerStyle: {
+            paddingRight: 24,
+          },
+          title: 'Restaurant Native',
+          headerTintColor: '#fcc735',
+          headerTitleStyle: {
+            fontFamily: 'Poppins-Medium',
+            fontSize: 24,
+          },
+          headerStyle: {
+            backgroundColor: '#1e90ff',
+            elevation: 0,
+            borderWidth: 0,
+            shadowColor: 'transparent',
+          },
+        })}
+      />
+      <Main.Screen
+        name="FoodDetails"
+        component={FoodDetails}
+        options={({ navigation }) => ({
+          headerRight: () => (
+            <Icon
+              name="heart"
+              size={24}
+              color="#fcc735"
+              onPress={() => {
+                navigation.navigate('Welcome');
+              }}
+            />
+          ),
+          headerRightContainerStyle: {
+            paddingRight: 24,
+          },
+          headerLeft: () => (
+            <Icon
+              name="arrow-left"
+              size={24}
+              color="#fcc735"
+              onPress={() => navigation.goBack()}
+            />
+          ),
+          headerLeftContainerStyle: {
+            paddingLeft: 24,
+          },
+          title: 'Details',
+          headerTintColor: '#fff',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontFamily: 'Poppins-Regular',
+            fontSize: 20,
+          },
+          headerStyle: {
+            backgroundColor: '#1e90ff',
+            elevation: 0,
+            borderWidth: 0,
+            shadowColor: 'transparent',
+          },
+        })}
+      />
+    </Main.Navigator>
+  );
+};
 
 const Tab = createBottomTabNavigator();
 
@@ -24,47 +110,17 @@ const TabRoutes: React.FC = () => {
         },
       })}
     >
-      <Tab.Group
-        screenOptions={({ navigation }) => ({
-          headerLeft: () => <></>,
-          headerRight: () => (
-            <Icon
-              name="log-out"
-              size={24}
-              color="#fcc735"
-              onPress={() => {
-                navigation.navigate('Welcome');
-              }}
-            />
+      <Tab.Screen
+        name="MainStack"
+        component={MainStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color }) => (
+            <Icon size={25} name="list" color={color} />
           ),
-          headerRightContainerStyle: {
-            paddingRight: 24,
-          },
-          headerTitle: 'Restaurant Native',
-          headerTitleStyle: {
-            color: '#fcc735',
-            fontFamily: 'Poppins-Medium',
-            fontSize: 24,
-          },
-          headerStyle: {
-            backgroundColor: '#1e90ff',
-            elevation: 0,
-            borderWidth: 0,
-            shadowColor: 'transparent',
-          },
-        })}
-      >
-        <Tab.Screen
-          name="Dashboard"
-          component={Dashboard}
-          options={{
-            tabBarIcon: ({ color }) => (
-              <Icon size={25} name="list" color={color} />
-            ),
-            title: 'Dashboard',
-          }}
-        />
-      </Tab.Group>
+          title: 'Dashboard',
+        }}
+      />
 
       <Tab.Group
         screenOptions={({ navigation }) => ({
