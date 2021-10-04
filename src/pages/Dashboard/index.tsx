@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useState } from 'react';
 import Input from '../../components/Input';
 
 import api from '../../services/api';
+import formatPrice from '../../utils/formatPrice';
 
 import {
   Container,
@@ -50,9 +51,14 @@ const Dashboard: React.FC = () => {
 
   useEffect(() => {
     async function loadFoods(): Promise<void> {
-      const response = await api.get('/foods');
+      const response = await api.get<Food[]>('/foods');
 
-      setFoods(response.data);
+      const formattedData = response.data.map(food => ({
+        ...food,
+        formattedPrice: formatPrice(food.price),
+      }));
+
+      setFoods(formattedData);
     }
 
     loadFoods();

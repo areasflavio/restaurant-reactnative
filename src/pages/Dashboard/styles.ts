@@ -61,7 +61,7 @@ export const CategoryContainer = styled.TouchableOpacity.attrs({
   border: 1px solid #bbb;
   border-color: ${props => (props.selected ? '#1e90ff' : '#bbb')};
 
-  background: #bbb;
+  background: #bfdfff;
 `;
 
 export const CategoryImage = styled.Image`
@@ -72,7 +72,7 @@ export const CategoryImage = styled.Image`
 export const CategoryTitle = styled.Text<CategoryTitleProps>`
   margin-top: auto;
 
-  color: ${props => (props.selected ? '#1e90ff' : '#444')};
+  color: ${props => (props.selected ? '#1e90ff' : '#3d3d4d')};
 `;
 
 export const FoodsListContainer = styled.View`
@@ -81,14 +81,18 @@ export const FoodsListContainer = styled.View`
 
 export const FoodsList = styled(FlatList as new () => FlatList<Food>)``;
 
-export const FoodContainer = styled(RectButton)`
+export const FoodContainer = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.6,
+})`
   flex-direction: row;
 
   margin-bottom: 16px;
-  border-radius: 4px;
 `;
 
 export const FoodImageContainer = styled.View`
+  align-items: center;
+  justify-content: center;
+
   padding: 8px;
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
@@ -102,15 +106,41 @@ export const FoodImage = styled.Image`
 `;
 
 export const FoodInfo = styled.View`
+  flex: 1;
+
   padding: 8px;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 
-  background: #bbb;
+  background: #bfdfff;
 `;
 
-export const FoodName = styled.Text``;
+export const FoodName = styled.Text`
+  font-family: 'Poppins-Regular';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #3d3d4d;
+`;
 
-export const FoodDescription = styled.Text``;
+export const FoodDescription = styled.Text`
+  font-family: 'Poppins-Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 16px;
+  margin-top: 6px;
+  color: #3d3d4d;
+`;
 
-export const FoodPrice = styled.Text``;
+export const FoodPrice = styled.Text`
+  font-family: 'Poppins-Regular';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 28px;
+  margin-top: 8px;
+  font-weight: 600;
+  color: #3abc4b;
+`;
