@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useFocusEffect } from '@react-navigation/native';
 
 import api from '../../services/api';
 import formatPrice from '../../utils/formatPrice';
@@ -40,7 +41,7 @@ export interface Food {
 const Orders: React.FC = () => {
   const [orders, setOrders] = useState<Food[]>([]);
 
-  useEffect(() => {
+  useFocusEffect(() => {
     async function loadCategories(): Promise<void> {
       const response = await api.get<Food[]>('/orders');
 
@@ -53,7 +54,7 @@ const Orders: React.FC = () => {
     }
 
     loadCategories();
-  }, []);
+  });
 
   return (
     <Container>

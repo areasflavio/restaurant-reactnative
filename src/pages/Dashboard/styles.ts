@@ -23,6 +23,7 @@ export const Header = styled.View`
   height: 32px;
 
   padding: 8px 24px 0;
+  margin-bottom: 24px;
 
   background: #1e90ff;
 `;
@@ -34,7 +35,7 @@ export const Content = styled.View`
 `;
 
 export const Title = styled.Text`
-  margin-top: 48px;
+  margin-top: 12px;
 
   color: #0052a3;
   font-family: 'Poppins-Bold';
