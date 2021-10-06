@@ -57,8 +57,8 @@ export const CategoryContainer = styled.TouchableOpacity.attrs({
   padding: 8px 16px;
   margin-right: 16px;
   border-radius: 8px;
-  border: 1px solid #bbb;
-  border-color: ${props => (props.selected ? '#1e90ff' : '#bbb')};
+  border: 1px solid #f0f0f5;
+  border-color: ${props => (props.selected ? '#1e90ff' : '#f0f0f5')};
 
   background: #f0f0f5;
 `;

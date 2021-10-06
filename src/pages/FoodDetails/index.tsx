@@ -166,9 +166,9 @@ const FoodDetails: React.FC = () => {
         description: food.description,
         price: food.price,
         category: food.category,
-        thumbnail_url: food.image_url,
+        thumbnail_url: food.thumbnail_url,
         foodQuantity,
-        ...extras,
+        extras,
       });
 
       Alert.alert('Success', 'Your order was made with success.');
