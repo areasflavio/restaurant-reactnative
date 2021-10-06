@@ -1,5 +1,4 @@
 import { FlatList } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
 import styled from 'styled-components/native';
 
 import { Category, Food } from './index';
@@ -61,7 +60,7 @@ export const CategoryContainer = styled.TouchableOpacity.attrs({
   border: 1px solid #bbb;
   border-color: ${props => (props.selected ? '#1e90ff' : '#bbb')};
 
-  background: #bfdfff;
+  background: #f0f0f5;
 `;
 
 export const CategoryImage = styled.Image`
@@ -112,7 +111,7 @@ export const FoodInfo = styled.View`
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 
-  background: #bfdfff;
+  background: #f0f0f5;
 `;
 
 export const FoodName = styled.Text`

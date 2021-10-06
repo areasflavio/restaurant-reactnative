@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/Feather';
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 import Dashboard from '../pages/Dashboard';
 import FoodDetails from '../pages/FoodDetails';
@@ -34,7 +35,7 @@ const MainStack: React.FC = () => {
           title: 'Restaurant Native',
           headerTintColor: '#fcc735',
           headerTitleStyle: {
-            fontFamily: 'Poppins-Medium',
+            fontFamily: 'Poppins-Regular',
             fontSize: 24,
           },
           headerStyle: {
@@ -50,7 +51,7 @@ const MainStack: React.FC = () => {
         component={FoodDetails}
         options={({ navigation }) => ({
           headerRight: () => (
-            <Icon
+            <AntDesignIcon
               name="heart"
               size={24}
               color="#fcc735"
